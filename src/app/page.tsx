@@ -7,9 +7,13 @@ const supabase = createClient(
 export default async function PostsPage() {
   const { data: posts, error } = await supabase.from("faq").select("id, question, created_at");
   if (error) return <p>Error loading posts</p>;
+  if (!posts || posts.length === 0) return <p>No posts found.</p>;
+
+  console.log("Posts:", posts, "Error:", error);
+
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">Blog Posts</h1>
+      <h1 className="text-2xl font-bold mb-4">qs</h1>
       <ul>
         {posts?.map((post) => (
           <li key={post.id} className="mb-2">
