@@ -12,8 +12,8 @@ async function addQuestion() {
     const { data, error } = await supabase
         .from("faq")
         .insert({
-            question: "How do I reset my password?",
-            answer: "To reset your password, click on the 'Forgot Password' link on the login page and follow the instructions sent to your email."
+            question: "How can I get help if I'm stuck on a Frontend Mentor challenge?",
+            answer: "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members."
         });
 
     if (error) {
