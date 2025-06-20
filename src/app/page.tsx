@@ -11,6 +11,8 @@ export default  function PostsPage() {
     setShowAnswer(showAnswer === index ? null : index);
   };
 
+
+
   return (
     <div className="bg-white p-11  rounded-xl  ">
       <div className='flex flex-row gap-4 mb-7'>
@@ -36,7 +38,13 @@ export default  function PostsPage() {
               }
               </div>
            
-              {showAnswer==index && <h2 className='text-sm font-light md:w-90'>{faq.answer}</h2>}
+         <h2
+  className={`text-sm font-light md:w-90 answer-transition ${
+    showAnswer === index ? 'answer-open' : ''
+  }`}
+>
+  {faq.answer}
+</h2>
 
             </div>
           ))}
